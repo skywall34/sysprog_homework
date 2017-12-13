@@ -55,7 +55,7 @@ int hybrid_lock_lock(struct hybrid_lock *lock)
 	if(i!=0){
 		pthread_spin_unlock(&lock->spin_lock);
 		if(pthread_mutex_trylock(&lock->mutex_lock)!=0){
-			while(1){
+			while(j==0){
 				if(pthread_mutex_trylock(&lock->mutex_lock)==0){
 					j++;
 					return 0;
