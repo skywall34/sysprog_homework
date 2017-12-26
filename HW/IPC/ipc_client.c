@@ -202,7 +202,7 @@ int main(int argc, char * argv[]) {
   
   inline void exiting() {
     send_message(DISCONNECT_MSG, queueID, key, client_key, key);
-    printf("\n*** YOU ARE NOW LOGGED OUT OF CHAT***\n");
+    printf("\n*** Client Exit***\n");
     exit(0);
   }
 
